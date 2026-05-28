@@ -24,6 +24,8 @@ public class Prescription {
     private String date;
    
     private String deliveryStatus = "PENDING";
+    
+    private String token;
 }
 
    

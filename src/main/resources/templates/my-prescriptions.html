@@ -83,7 +83,8 @@
                 <thead class="table-primary">
 
                     <tr>
-
+						<th>Token</th>
+						
                         <th>Date</th>
 
                         <th>Doctor</th>
@@ -91,6 +92,8 @@
                         <th>Medicines</th>
 
                         <th>Notes</th>
+						
+						
 
                     </tr>
 
@@ -127,7 +130,7 @@
         table.innerHTML += `
 
             <tr>
-
+				<td>${p.token}</td>
                 <td>${pre.date}</td>
 
                 <td>${pre.doctorName}</td>

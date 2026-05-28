@@ -13,4 +13,7 @@ extends JpaRepository<Prescription, Long>{
 
     List<Prescription> findByDoctorName(String doctorName);
 
+    Prescription findByToken(String token);
+    
+    List<Prescription>   findByPatientNameContainingIgnoreCaseOrTokenContainingIgnoreCase( String name, String token );
 }

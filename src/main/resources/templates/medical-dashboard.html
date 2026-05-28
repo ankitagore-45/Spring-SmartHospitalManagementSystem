@@ -58,6 +58,7 @@
             </a>
 
         </div>
+		
 
     </div>
 
@@ -69,6 +70,20 @@
     <h2 class="mb-4 text-success">
         All Prescriptions
     </h2>
+	<!-- 🔍 SEARCH BAR -->
+	<div class="mb-3 d-flex">
+	
+	    <input type="text"
+	           id="searchInput"
+	           class="form-control me-2"
+	           placeholder="Search by patient name or token">
+	
+	    <button class="btn btn-success"
+	            onclick="searchPrescription()">
+	        Search
+	    </button>
+	
+	</div>
 
     <div class="card p-4">
 
@@ -79,13 +94,14 @@
                 <thead class="table-success">
 
                     <tr>
-
+						<th>Token</th>
                         <th>Patient</th>
                         <th>Doctor</th>
                         <th>Medicines</th>
                         <th>Notes</th>
                         <th>Status</th>
                         <th>Action</th>
+					
 
                     </tr>
 
@@ -128,7 +144,8 @@ fetch("http://localhost:8181/prescription/all")
         table.innerHTML += `
 
             <tr>
-
+				<td>${p.token}</td>
+				
                 <td>${p.patientName}</td>
 
                 <td>${p.doctorName}</td>
@@ -183,6 +200,58 @@ function giveMedicine(id){
 
     });
 
+}
+
+//for search patient 
+function searchPrescription(){
+
+    let keyword =
+        document.getElementById("searchInput").value;
+
+    fetch(`http://localhost:8181/prescription/search?keyword=${keyword}`)
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        let table =
+            document.getElementById("prescriptionTable");
+
+        table.innerHTML = "";
+
+        data.forEach(p => {
+
+            let badgeColor = "warning";
+
+            if(p.deliveryStatus === "DISPENSED"){
+                badgeColor = "success";
+            }
+
+            table.innerHTML += `
+
+            <tr>
+				<td>${p.token}</td>
+                <td>${p.patientName}</td>
+                <td>${p.doctorName}</td>
+                <td>${p.medicines}</td>
+                <td>${p.notes}</td>
+                <td>
+                    <span class="badge bg-${badgeColor}">
+                        ${p.deliveryStatus}
+                    </span>
+                </td>
+                <td>
+                    <button onclick="giveMedicine(${p.id})"
+                        class="btn btn-success btn-sm">
+                        Give Medicine
+                    </button>
+                </td>
+            </tr>
+
+            `;
+        });
+
+    });
 }
 
 </script>

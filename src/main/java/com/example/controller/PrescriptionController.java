@@ -3,10 +3,20 @@ package com.example.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Prescription;
 import com.example.repository.PrescriptionRepository;
+import com.example.service.PrescriptionService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -18,11 +28,12 @@ public class PrescriptionController {
     @Autowired
     private PrescriptionRepository prescriptionRepository;
 
+    @Autowired
+    private PrescriptionService prescriptionService;
     // add prescription
     @PostMapping("/add")
     public Prescription addPrescription(@RequestBody Prescription prescription) {
-
-        return prescriptionRepository.save(prescription);
+        return prescriptionService.savePrescription(prescription);
     }
 
     // patient prescriptions
@@ -75,4 +86,14 @@ public class PrescriptionController {
 
         return "Medicine Dispensed Successfully";
     }
+
+//    //for search
+
+    
+    @GetMapping("/search")
+    public List<Prescription> search(@RequestParam String keyword) {
+        return prescriptionRepository
+            .findByPatientNameContainingIgnoreCaseOrTokenContainingIgnoreCase(keyword, keyword);
+    }
+    
 }
