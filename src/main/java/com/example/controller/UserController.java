@@ -297,5 +297,9 @@ public class UserController {
 
         return "Password Updated Successfully";
     }
-
+//for render
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
 }
