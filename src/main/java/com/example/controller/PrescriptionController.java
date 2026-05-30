@@ -57,7 +57,9 @@ public class PrescriptionController {
             HttpSession session) {
 
         String doctorName =
-                (String) session.getAttribute("doctorName");
+                (String) session.getAttribute("name");
+
+        System.out.println("DOCTOR NAME = " + doctorName);
 
         return prescriptionRepository
                 .findByDoctorName(doctorName);
@@ -95,5 +97,7 @@ public class PrescriptionController {
         return prescriptionRepository
             .findByPatientNameContainingIgnoreCaseOrTokenContainingIgnoreCase(keyword, keyword);
     }
+    
+    
     
 }
