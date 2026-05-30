@@ -59,7 +59,7 @@
 	
 	    if(confirm("Are you sure to delete appointment?")) {
 	
-	        fetch(`http://localhost:8181/appointment/delete/${id}`, {
+	        fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/appointment/delete/${id}`, {
 	
 	            method: "DELETE"
 	
@@ -81,7 +81,7 @@
 	
 	}
 	//
-		fetch("http://localhost:8181/appointment/all")
+		fetch("	https://spring-smarthospitalmanagementsystem-6.onrender.com/appointment/all")
 	
 	.then(response => response.json())
 	

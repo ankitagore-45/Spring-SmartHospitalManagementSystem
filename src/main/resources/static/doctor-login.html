@@ -122,7 +122,7 @@ document.getElementById("doctorLoginForm")
             document.getElementById("password").value
     };
 
-    fetch("http://localhost:8181/doctor/login", {
+    fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/login", {
 
         method:"POST",
 
@@ -142,7 +142,7 @@ document.getElementById("doctorLoginForm")
 
            // alert("Doctor Login Successful");
 
-		   window.location.href = "http://localhost:8181/doctor/doctor-dashboard";
+		   window.location.href = "https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/doctor-dashboard";
         }
 
         else{

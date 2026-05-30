@@ -383,7 +383,7 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.j
 <!-- Fetch Appointment Data -->
 
 <script>
-		fetch("http://localhost:8181/appointment/all")
+		fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/appointment/all")
 	
 	.then(response => response.json())
 	
@@ -438,7 +438,7 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.j
 	
 	function updateStatus(id, status) {
 	
-		fetch(`http://localhost:8181/doctor/appointment/status/${id}?status=${status}`, {
+		fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/appointment/status/${id}?status=${status}`, {
 	
 	        method: "PUT"
 	
@@ -490,7 +490,7 @@ document.getElementById("doctorForm")
         role: "DOCTOR"
     };
 
-	fetch("http://localhost:8181/doctor/add", {
+	fetch("	https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/add", {
 	
 	    method: "POST",
 	
@@ -539,7 +539,7 @@ document.getElementById("doctorForm")
 });
 
 //dynamic cound of cards
-fetch("http://localhost:8181/appointment/admin-counts")
+fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/appointment/admin-counts")
 
 .then(response => response.json())
 

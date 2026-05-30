@@ -122,7 +122,7 @@
 
 <script>
 
-fetch("http://localhost:8181/prescription/all")
+fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/prescription/all")
 
 .then(res => res.json())
 
@@ -184,7 +184,7 @@ fetch("http://localhost:8181/prescription/all")
 
 function giveMedicine(id){
 
-    fetch(`http://localhost:8181/prescription/dispense/${id}`, {
+    fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/prescription/dispense/${id}`, {
 
         method:"PUT"
 
@@ -208,7 +208,7 @@ function searchPrescription(){
     let keyword =
         document.getElementById("searchInput").value;
 
-    fetch(`http://localhost:8181/prescription/search?keyword=${keyword}`)
+    fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/prescription/search?keyword=${keyword}`)
 
     .then(res => res.json())
 

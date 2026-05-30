@@ -332,7 +332,7 @@
 	
 	<script>
 	
-		fetch("http://localhost:8181/doctor/my-appointments")
+		fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/my-appointments")
 	
 	.then(response => response.json())
 	
@@ -410,7 +410,7 @@
 	//toshow drname in corner
 	
 	
-	fetch("http://localhost:8181/doctor/logged-doctor")
+	fetch("	https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/logged-doctor")
 	
 	.then(response => response.text())
 	
@@ -425,7 +425,7 @@
 	
 	function updateStatus(id, status) {
 	
-		fetch(`http://localhost:8181/doctor/appointment/status/${id}?status=${status}`, {
+		fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/appointment/status/${id}?status=${status}`, {
 	        method: "PUT"
 	    })
 	    .then(res => res.text())
@@ -438,7 +438,7 @@
 	
 	// doctor dashboard counts
 	
-	fetch("http://localhost:8181/doctor/my-appointments")
+	fetch("	https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/my-appointments")
 	
 	.then(response => response.json())
 	
@@ -501,7 +501,7 @@
 	
 	    };
 	
-	    fetch("http://localhost:8181/prescription/add", {
+	    fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/prescription/add", {
 	
 	        method: "POST",
 	

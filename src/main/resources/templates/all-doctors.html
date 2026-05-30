@@ -48,7 +48,7 @@
 	
 	   if(confirm("Are you sure to delete doctor?")) {
 	
-	       fetch(`http://localhost:8181/doctor/delete/${id}`, {
+	       fetch(`https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/delete/${id}`, {
 	
 	           method: "DELETE"
 	
@@ -71,7 +71,7 @@
 	}
 	//
 
-fetch("http://localhost:8181/doctor/all")
+fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/doctor/all")
 
 .then(response => response.json())
 
