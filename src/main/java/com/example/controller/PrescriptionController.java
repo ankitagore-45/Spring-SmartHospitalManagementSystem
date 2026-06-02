@@ -24,7 +24,7 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/prescription")
 @CrossOrigin("*")
 public class PrescriptionController {
-
+ 
     @Autowired
     private PrescriptionRepository prescriptionRepository;
 
@@ -37,7 +37,6 @@ public class PrescriptionController {
     }
 
     // patient prescriptions
-    @ResponseBody
     @GetMapping("/my")
     public List<Prescription> getMyPrescriptions(
             HttpSession session) {
