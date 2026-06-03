@@ -37,6 +37,19 @@ public class PrescriptionController {
     }
 
     // patient prescriptions
+//    @GetMapping("/my")
+//    public List<Prescription> getMyPrescriptions(
+//            HttpSession session) {
+//
+//        String patientName =
+//                (String) session.getAttribute("name");
+//
+//        System.out.println("SESSION NAME = " + patientName);
+//
+//        return prescriptionRepository
+//                .findByPatientName(patientName);
+//    }
+    
     @GetMapping("/my")
     public List<Prescription> getMyPrescriptions(
             HttpSession session) {
@@ -47,7 +60,7 @@ public class PrescriptionController {
         System.out.println("SESSION NAME = " + patientName);
 
         return prescriptionRepository
-                .findByPatientName(patientName);
+                .findAll();
     }
 
     // doctor prescriptions
