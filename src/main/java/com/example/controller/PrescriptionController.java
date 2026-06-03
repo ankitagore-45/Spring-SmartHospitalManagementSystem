@@ -118,9 +118,9 @@ public class PrescriptionController {
                 session.getAttribute("name");
     }
     
-    @GetMapping("/getbyemail/{patientEmail}")
-    public List<Prescription> findByEmail(@PathVariable String patientEmail){
-    	return prescriptionService.findByPatientEmail(patientEmail);
-    }
-    
+//    @GetMapping("/getbyemail/{patientEmail}")
+//    public List<Prescription> findByEmail(@PathVariable String patientEmail){
+//    	return prescriptionService.findByPatientEmail(patientEmail);
+//    }
+//    
 }
