@@ -38,9 +38,8 @@ public class PrescriptionController {
     }
 
     // patient prescriptions
-    @GetMapping("/my")
-    public List<Prescription> getMyPrescriptions(
-            HttpSession session) {
+    @GetMapping("/myPrescription")
+    public List<Prescription> getMyPrescriptions(HttpSession session) {
 
         String patientName =
                 (String) session.getAttribute("name");
