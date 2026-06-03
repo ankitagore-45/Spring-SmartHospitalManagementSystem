@@ -179,5 +179,14 @@ public class DoctorController {
         return "doctor-patients";
     }
     
+    @ResponseBody
+    @GetMapping("/my-patients")
+    public List<Appointment> getMyPatients(HttpSession session) {
+
+        String doctorName =
+                (String) session.getAttribute("doctorName");
+
+        return appointmentRepository.findByDoctorName(doctorName);
+    }
 
 }
