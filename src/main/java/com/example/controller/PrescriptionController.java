@@ -108,6 +108,13 @@ public class PrescriptionController {
             .findByPatientNameContainingIgnoreCaseOrTokenContainingIgnoreCase(keyword, keyword);
     }
     
+    @GetMapping("/test-session")
+    @ResponseBody
+    public String testSession(HttpSession session){
+
+        return "SESSION NAME = " +
+                session.getAttribute("name");
+    }
     
     
 }
