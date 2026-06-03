@@ -59,10 +59,13 @@ public class PrescriptionController {
 
         System.out.println("SESSION NAME = " + patientName);
 
-        return prescriptionRepository
-                .findAll();
-    }
+        List<Prescription> list =
+                prescriptionRepository.findByPatientName(patientName);
 
+        System.out.println("RECORDS FOUND = " + list.size());
+
+        return list;
+    }
     // doctor prescriptions
     @GetMapping("/doctor")
     public List<Prescription> getDoctorPrescriptions(
