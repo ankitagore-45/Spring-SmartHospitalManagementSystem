@@ -38,32 +38,32 @@ public class PrescriptionController {
     }
 
     // patient prescriptions
-//    @GetMapping("/my")
-//    public List<Prescription> getMyPrescriptions(
-//            HttpSession session) {
-//
-//        String patientName =
-//                (String) session.getAttribute("name");
-//
-//        System.out.println("SESSION NAME = " + patientName);
-//
-//        return prescriptionRepository
-//                .findByPatientName(patientName);
-//    }
+    @GetMapping("/my")
+    public List<Prescription> getMyPrescriptions(
+            HttpSession session) {
+
+        String patientName =
+                (String) session.getAttribute("name");
+
+        System.out.println("SESSION NAME = " + patientName);
+
+        return prescriptionRepository
+                .findByPatientName(patientName);
+   }
    
     
-    @GetMapping("/my")
-    public List<Prescription> getMyPrescriptions(HttpSession session) {
-
-        String email =
-                (String) session.getAttribute("email");
-
-        if(email == null) {
-            return List.of();
-        }
-
-        return prescriptionRepository.findByPatientEmail(email);
-    }
+//    @GetMapping("/my")
+//    public List<Prescription> getMyPrescriptions(HttpSession session) {
+//
+//        String email =
+//                (String) session.getAttribute("email");
+//
+//        if(email == null) {
+//            return List.of();
+//        }
+//
+//        return prescriptionRepository.findByPatientEmail(email);
+//    }
     // doctor prescriptions
     @GetMapping("/doctor")
     public List<Prescription> getDoctorPrescriptions(
