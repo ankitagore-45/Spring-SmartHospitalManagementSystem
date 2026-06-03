@@ -12,6 +12,7 @@ extends JpaRepository<Prescription, Long>{
     List<Prescription> findByPatientName(String patientName);
 
     List<Prescription> findByDoctorName(String doctorName);
+    List<Prescription> findByPatientEmail(String patientEmail);
 
     Prescription findByToken(String token);
     

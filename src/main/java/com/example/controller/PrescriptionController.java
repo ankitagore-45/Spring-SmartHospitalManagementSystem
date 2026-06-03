@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.entity.Appointment;
 import com.example.entity.Prescription;
 import com.example.repository.PrescriptionRepository;
 import com.example.service.PrescriptionService;
@@ -49,17 +50,20 @@ public class PrescriptionController {
 //        return prescriptionRepository
 //                .findByPatientName(patientName);
 //    }
+   
     
     @GetMapping("/my")
-    public List<Prescription> getMyPrescriptions(
-            HttpSession session) {
+    public List<Prescription> getMyPrescriptions(HttpSession session) {
 
-        String patientName =
-                (String) session.getAttribute("name");
+        String email =
+                (String) session.getAttribute("email");
 
-        System.out.println("SESSION NAME = " + patientName);
+        if(email == null) {
+            return List.of();
+        }
 
-        return prescriptionRepository.findAll();
+        return prescriptionRepository
+                .findByPatientEmail(email);
     }
     // doctor prescriptions
     @GetMapping("/doctor")
