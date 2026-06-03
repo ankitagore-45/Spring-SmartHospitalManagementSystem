@@ -35,4 +35,11 @@ public class PrescriptionServiceImpl implements PrescriptionService {
 
         return prescriptionRepository.save(savedPrescription);
     }
+
+	@Override
+	public List<Prescription> findByPatientEmail(String patientEmail) {
+		return prescriptionRepository.findByPatientEmail(patientEmail) ;
+	}
+
+	
 }

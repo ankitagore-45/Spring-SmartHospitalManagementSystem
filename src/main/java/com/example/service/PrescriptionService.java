@@ -8,4 +8,5 @@ public interface PrescriptionService {
     List<Prescription> searchByName(String keyword);
     Prescription findByToken(String token);
     Prescription savePrescription(Prescription p);
+    List<Prescription> findByPatientEmail(String patientEmail);
 }

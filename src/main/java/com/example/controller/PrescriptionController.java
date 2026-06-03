@@ -62,8 +62,7 @@ public class PrescriptionController {
             return List.of();
         }
 
-        return prescriptionRepository
-                .findByPatientEmail(email);
+        return prescriptionRepository.findByPatientEmail(email);
     }
     // doctor prescriptions
     @GetMapping("/doctor")
@@ -120,5 +119,9 @@ public class PrescriptionController {
                 session.getAttribute("name");
     }
     
+    @GetMapping("/getbyemail/{patientEmail}")
+    public List<Prescription> findByEmail(@PathVariable String patientEmail){
+    	return prescriptionService.findByPatientEmail(patientEmail);
+    }
     
 }
