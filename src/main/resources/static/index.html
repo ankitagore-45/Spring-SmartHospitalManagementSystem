@@ -14,6 +14,183 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="style.css">
+    <style>
+#alineLauncher{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+}
+
+#alineBtn{
+
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+font-size:22px;
+
+background:linear-gradient(
+135deg,
+#0F4C81,
+#14B8A6);
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(20,184,166,.35);
+
+animation:pulse 2s infinite;
+}
+
+#alineHint{
+
+position:absolute;
+
+right:70px;
+top:10px;
+
+background:white;
+
+padding:6px 10px;
+
+border-radius:20px;
+
+font-size:13px;
+
+font-weight:600;
+
+white-space:nowrap;
+
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+#alineChat{
+
+display:none;
+
+position:fixed;
+
+bottom:90px;
+right:20px;
+
+width:290px;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+z-index:9999;
+}
+
+.aline-header{
+
+background:linear-gradient(
+135deg,
+#0F4C81,
+#14B8A6);
+
+color:white;
+
+padding:15px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+}
+
+.aline-avatar{
+
+width:40px;
+height:40px;
+
+border-radius:50%;
+
+background:white;
+
+color:#0F4C81;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+}
+
+.aline-body{
+
+padding:15px;
+	
+min-height:120px;
+
+overflow-y:auto;
+}
+
+.bot-msg{
+
+background:#f1f5f9;
+
+padding:12px;
+
+border-radius:12px;
+
+font-size:14px;
+}
+
+.chat-option{
+
+width:100%;
+
+border:none;
+
+background:#eff6ff;
+
+padding:10px;
+
+margin-bottom:8px;
+
+border-radius:10px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.chat-option:hover{
+
+background:#14B8A6;
+
+color:white;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}</style>
 </head>
 
 <body>
@@ -405,8 +582,303 @@
 
     <!-- Footer End -->
 
+<!-- AI Assistant Button -->
+<!--<div id="chatLauncher">
 
-    <!-- Bootstrap JS -->
+    <div id="chatHint">
+        👋 Need Help?
+    </div>
+
+    <button id="chatBtn">
+        💬
+    </button>
+
+</div>
+
+<div class="bot-avatar">
+    A
+</div>
+-->
+<!-- Aline Floating Button -->
+
+<div id="alineLauncher">
+
+    <div id="alineHint">
+        👋 Need Help?
+    </div>
+
+    <button id="alineBtn">
+        👩‍⚕️
+    </button>
+
+</div>
+
+<!-- Chat Window -->
+
+<div id="alineChat">
+
+    <div class="aline-header">
+
+        <div class="d-flex align-items-center">
+
+            <div class="aline-avatar">
+                A
+            </div>
+
+            <div class="ms-2">
+
+                <div class="fw-bold">
+                    Aline
+                </div>
+
+                <small>
+                    🟢 Online
+                </small>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-sm btn-light"
+                onclick="closeAline()">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="aline-body">
+
+       <div id="firstQuestion">
+
+    <div class="bot-msg">
+
+        👩‍⚕️ Hi, I'm Aline.
+
+        <br><br>
+
+        Do you need any help today?
+
+    </div>
+
+    <div class="mt-3 text-center">
+
+        <button class="btn btn-success"
+                onclick="showMainMenu()">
+            Yes
+        </button>
+
+        <button class="btn btn-secondary"
+                onclick="closeAline()">
+            No
+        </button>
+
+    </div>
+
+</div>
+
+<div id="mainMenu"
+     style="display:none;">
+
+</div>
+
+        <div id="chatResponse" class="mt-3"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("alineBtn")
+.addEventListener("click", function(){
+
+let chat =
+document.getElementById("alineChat");
+
+if(chat.style.display === "block"){
+
+chat.style.display = "none";
+
+}else{
+
+chat.style.display = "block";
+
+document.getElementById("alineHint")
+.style.display = "none";
+
+}
+
+});
+
+function closeAline(){
+
+document.getElementById("alineChat")
+.style.display = "none";
+
+}
+function showMainMenu(){
+
+	document.getElementById("firstQuestion")
+	.style.display="none";
+
+	document.getElementById("mainMenu")
+	.style.display="block";
+
+	document.getElementById("mainMenu")
+	.innerHTML=`
+
+	<button class="chat-option"
+	onclick="showAppointment()">
+
+	📅 Book Appointment
+
+	</button>
+
+	<button class="chat-option"
+	onclick="showDoctor()">
+
+	👨‍⚕️ Find Doctor
+
+	</button>
+
+	<button class="chat-option"
+	onclick="showPrescription()">
+
+	💊 Prescription Help
+
+	</button>
+
+	<button class="chat-option"
+	onclick="showEmergency()">
+
+	🚨 Emergency
+
+	</button>
+
+	<div id="chatResponse"></div>
+
+	`;
+
+	}
+
+function showAppointment(){
+
+document.getElementById("chatResponse")
+.innerHTML =
+
+`<div class="bot-msg">
+
+📅 To book an appointment:
+
+<br><br>
+
+1. Login as Patient
+
+<br>
+
+2. Click Book Appointment
+
+<br>
+
+3. Select Doctor
+
+<br>
+
+4. Choose Date
+
+<br>
+
+5. Submit
+
+</div>`;
+
+}
+
+function showDoctor(){
+
+document.getElementById("chatResponse")
+.innerHTML =
+
+`<div class="bot-msg">
+
+👨‍⚕️ Doctor Recommendation
+
+<br><br>
+
+🧴 Skin Problem → Dermatologist
+
+<br>
+
+💇 Hair Fall → Dermatologist
+
+<br>
+
+❤️ Heart Problem → Cardiologist
+
+<br>
+
+👁 Eye Problem → Ophthalmologist
+
+<br>
+
+🤒 Fever → General Physician
+
+<br>
+
+🦴 Bone Pain → Orthopedic
+
+</div>`;
+
+}
+
+function showPrescription(){
+
+document.getElementById("chatResponse")
+.innerHTML =
+
+`<div class="bot-msg">
+
+💊 Prescription Help
+
+<br><br>
+
+Login as Patient
+
+<br>
+
+Open My Prescriptions
+
+<br>
+
+View medicines and doctor's notes
+
+</div>`;
+
+}
+
+function showEmergency(){
+
+document.getElementById("chatResponse")
+.innerHTML =
+
+`<div class="bot-msg">
+
+🚨 Emergency Support
+
+<br><br>
+
+Please visit the Emergency Department immediately.
+
+<br><br>
+
+For severe conditions contact hospital staff.
+
+</div>`;
+
+}
+
+</script>
+ <!-- Bootstrap JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
