@@ -8,6 +8,6 @@ import jakarta.persistence.Id;
 @Entity 
 public class patient {
 @Id
-@GeneratedValue(startergy =  GenerationType.IDENTITY)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private long id;
 }
