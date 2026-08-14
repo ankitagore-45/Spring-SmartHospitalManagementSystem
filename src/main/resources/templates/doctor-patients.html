@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doctor Patients</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background:#f4f7fc;
+}
+
+.navbar{
+    background:#198754;
+}
+
+.navbar-brand,
+.nav-link{
+    color:white !important;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark px-4">
+
+<div class="container-fluid">
+
+<a class="navbar-brand fw-bold" href="#">
+    Smart Hospital
+</a>
+
+<div class="collapse navbar-collapse">
+
+<ul class="navbar-nav me-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="/doctor/doctor-dashboard">
+Home
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/doctor/appointments">
+Appointments
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="/doctor/patients">
+Patients
+</a>
+</li>
+
+</ul>
+
+<a href="/index.html"
+class="btn btn-light btn-sm">
+Logout
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+<div class="card p-4">
+
+<h3 class="text-success mb-4">
+My Patients
+</h3>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-success">
+
+<tr>
+
+<th>Patient Name</th>
+<th>Department</th>
+<th>Symptoms</th>
+
+</tr>
+
+</thead>
+
+<tbody id="patientTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+fetch("https://spring-smarthospitalmanagementsystem-6.onrender.com/my-patients")
+
+.then(response => response.json())
+
+.then(data => {
+
+let table = document.getElementById("patientTable");
+
+data.forEach(app => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${app.fullName}</td>
+
+<td>${app.department}</td>
+
+<td>${app.symptoms}</td>
+
+</tr>
+
+`;
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

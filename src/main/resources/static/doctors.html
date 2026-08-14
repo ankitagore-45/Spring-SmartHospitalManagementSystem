@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctors | Smart Hospital</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+	<style>
+		.card-img-top{
+		
+		    height:400px;
+		    object-fit:cover;
+		
+		}
+		.section-title{
+		    font-weight:bold;
+		    color:#0d6efd;
+		}
+	</style>
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+
+                <i class="bi bi-hospital"></i>
+                Smart Hospital
+
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="doctors.html">
+                            Doctors
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"	href="/appointment-page">
+                            Appointment
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+						<a class="btn btn-light ms-2" href="/doctor-login.html">
+						    Doctor Login
+						</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Navbar End -->
+
+
+
+    <!-- Hero Section Start -->
+
+    <section class="bg-success text-white text-center py-5">
+
+        <div class="container">
+
+            <h1 class="display-4 fw-bold">
+                Meet Our Expert Doctors
+            </h1>
+
+            <p class="lead mt-3">
+                Experienced healthcare professionals dedicated to your care.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Hero Section End -->
+
+
+
+    <!-- Doctors Section Start -->
+
+    <section class="container py-5">
+
+        <div class="row g-4">
+
+            <!-- Doctor 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. John Smith
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Cardiologist
+                        </p>
+
+                        <p class="text-muted">
+                            10+ years experience in heart care and cardiac surgery.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-page"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctor 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. Sarah Wilson
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Neurologist
+                        </p>
+
+                        <p class="text-muted">
+                            Specialist in neurological disorders and brain health.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-page"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctor 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. David Lee
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Orthopedic Specialist
+                        </p>
+
+                        <p class="text-muted">
+                            Expert in bone treatment, joint replacement, and injuries.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-pagel"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctor 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. Emily Johnson
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Pediatrician
+                        </p>
+
+                        <p class="text-muted">
+                            Dedicated child healthcare specialist with 8 years experience.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-half text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-page"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctor 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. Michael Brown
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Dermatologist
+                        </p>
+
+                        <p class="text-muted">
+                            Skin treatment expert providing advanced skincare solutions.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-page"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctor 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=687&auto=format&fit=crop"
+                    class="card-img-top"
+                    alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4 class="fw-bold">
+                            Dr. Olivia Martin
+                        </h4>
+
+                        <p class="text-success fw-semibold">
+                            Gynecologist
+                        </p>
+
+                        <p class="text-muted">
+                            Women's healthcare specialist with compassionate care.
+                        </p>
+
+                        <div class="mb-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                        </div>
+
+                        <a href="/appointment-page"
+                        class="btn btn-success">
+
+                            Book Appointment
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Doctors Section End -->
+
+
+
+    <!-- Why Choose Our Doctors Section Start -->
+
+    <section class="bg-light py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold text-success">
+                    Why Choose Our Doctors?
+                </h2>
+
+                <p class="text-muted">
+                    Trusted specialists committed to excellent patient care.
+                </p>
+
+            </div>
+
+            <div class="row text-center g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card shadow border-0 p-4 h-100">
+
+                        <i class="bi bi-award-fill text-success"
+                        style="font-size: 50px;"></i>
+
+                        <h4 class="mt-3">
+                            Experienced Specialists
+                        </h4>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card shadow border-0 p-4 h-100">
+
+                        <i class="bi bi-heart-pulse-fill text-success"
+                        style="font-size: 50px;"></i>
+
+                        <h4 class="mt-3">
+                            Quality Treatment
+                        </h4>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card shadow border-0 p-4 h-100">
+
+                        <i class="bi bi-person-check-fill text-success"
+                        style="font-size: 50px;"></i>
+
+                        <h4 class="mt-3">
+                            Patient Satisfaction
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Why Choose Our Doctors Section End -->
+ 
+	<!-- Doctor Login Section Start -->
+	
+	<section class="py-5 bg-light">
+	
+	    <div class="container">
+	
+	        <div class="row justify-content-center">
+	
+	            <div class="col-lg-8">
+	
+	                <div class="card border-0 shadow p-5 text-center">
+	
+	                    <i class="bi bi-person-badge-fill text-success"
+	                       style="font-size:60px;"></i>
+	
+	                    <h2 class="fw-bold mt-3">
+	                        Doctor Portal
+	                    </h2>
+	
+	                    <p class="text-muted mt-3">
+	
+	                        Doctors can securely login to manage
+	                        appointments, view patient details,
+	                        and access their dashboard.
+	
+	                    </p>
+	
+	                    <div class="mt-4">
+	
+	                        <a href="/doctor-login.html"
+	                           class="btn btn-success btn-lg px-4">
+	
+	                            <i class="bi bi-box-arrow-in-right"></i>
+	                            Doctor Login
+	
+	                        </a>
+	
+	                    </div>
+	
+	                </div>
+	
+	            </div>
+	
+	        </div>
+	
+	    </div>
+	
+	</section>
+	
+	<!-- Doctor Login Section End -->
+
+
+    <!-- Footer Start -->
+
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p class="mb-0">
+            © 2026 Smart Hospital Management System | Designed by Ankita
+        </p>
+
+    </footer>
+
+    <!-- Footer End -->
+
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
